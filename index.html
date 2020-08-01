@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>ヨシダタクマ</title>
+  <meta name="author" content="ヨシダタクマ">
+  <meta name="description" content="ヨシダタクマのポートフォリオ">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('a[href^=#]').click(function() {
+        var speed = 400;
+        var href= $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' :href);
+        var position = target.offset().top;
+        $('body,html').animate({scrollTop:position}, speed, 'swing');
+        return false;
+      });
+    });
+  </script>
+
+  <style>
+    *{padding:0;margin:0;box-sizing:border-box;}
+    a{color:inherit;font-size:16px;text-decoration:none;}
+    body{max-width:100%;font-family:sans-serif;font-weight:100;line-height:1.7;letter-spacing:0.05em;}
+    h1{font-size:70px;position:relative;color:#fff;}
+    h1::after{width:55.5%;height:100%;content:"MY \A PORTFOLIO \A SITE";z-index:1;position:absolute;top:0%;left:0%;color:#333;overflow:hidden;}
+    h2{font-size:60px;}
+    h3{font-size:20px;}
+    p{font-size:18px;}
+    img{pointer-events:none;width:100px;max-width:100%;}
+    ul{list-style:none;}
+  </style>
+  <style>
+    header{width:100%;height:100px;background-color:#ff0;position:fixed;z-index:999;}
+    .header{width:100%;margin:0 auto;height:100px;display:flex;justify-content:space-between;align-items:center;}
+    .logo a{display:block;width:100px;text-align:center;padding:15px;margin:0 40px;border-bottom:1px solid transparent;transition:0.3s;}
+    .logo a:hover{border-bottom:1px solid #dcdddd;color:#dcdddd;transition:0.3s;}
+    .list ul{display:inline-flex;padding:5px 50px;}
+    .list a{padding:15px;border-bottom:1px solid transparent;transition:0.3s;}
+    .list a:hover{border-bottom:1px solid #dcdddd;color:#dcdddd;transition:0.3s;}
+    #nav{display:none;}
+  </style>
+  <style>
+    #top{width:90%;height:100vh;margin:auto;}
+    .top-box{width:80%;margin:0 auto;height:100%;display:flex;justify-content:center;align-items:center;}
+    .title{width:18%;z-index:3;}
+    .width{width:180%;}
+    .width span{font-size:80%;}
+    .top-img{width:82%;height:60%;background-color:/*#58f2f3*/#999;z-index:1}
+    .scroll{position:relative;display:inline-block;height:50px;transform:rotate(-90deg);transform-origin:left top;margin-left:20px;}
+    .scroll a{display:block;padding:0 50px;line-height:50px;}
+    .scroll a::after{position:absolute;left:0;bottom:0;display:block;width:200px;display:inline-block;height:1px;content:"";background-color:#333;}
+  </style>
+  <style>
+    #about{width:80%;margin:0 auto 100px;height:100vh;position:relative;}
+    .about-img{position:absolute;top:120px;right:0;bottom:0;left:0;width:100%;height:100%;background-color:gold;z-index:1;}
+    .about-box{position:absolute;top:60px;right:0;bottom:0;left:0;width:100%;height:auto;z-index:3;}
+    .about-h2{width:100%;}
+    .about-h2 h2{line-height:60px;padding:30px 60px;}
+    .flex{display:flex;}
+    .about-table{width:70%;}
+    .about-table table{width:60%;margin:0 auto;}
+    .about-table tr{border-bottom:1px solid #ededed;background-color:red;}
+    .about-table th{text-align:left;}
+
+    .face{width:30%;background-color:pink;}
+
+
+  </style>
+  <style>
+    *{border:px solid blue;}
+  </style>
+  <style>
+    @media screen and (max-width:700px) {
+      .header{width:100%;}
+      .logo a{display:block;padding:0px;margin:0 10px;width:80px;text-align:center;}
+      .list{display:none;}
+
+      #nav{padding:25px;position:relative;display:inherit;}
+      .unshown{display:none;}
+      #open{display:flex;justify-content:center;align-items:center;width:50px;height:50px;vertical-align:middle;background-color:pink;}
+      #open span,#open span:before,#open span:after{position:absolute;height:5px;width:30px;border-radius:30px;background-color:#333;display:block;content:'';cursor:pointer;}
+      #open span:before{bottom:-10px;background-color:#333;}
+      #open span:after{bottom:10px;background-color:#333;}
+
+      #close{display:none;position:fixed;background-color:#000;z-index:99999;top:0;right:0;width:100%;height:100%;opacity:0;transition:0.3s ease-in-out;}
+
+      #content{overflow:auto;position:absolute;top:0;right:0;z-index:999999;width:300px;max-width:300px;height:500px;background-color:rgba(255,255,255,0.7);transition:0.3s ease-in-out;-webkit-transform:translateX(105%);transform:translateX(105%);display:flex;justify-content:flex-start;align-items:center;}
+      #content ul{padding:0px;background-color:red;}
+      #content a{display:block;padding:10px;color:#333;transition:0.3s;}
+      #content a:hover{color:#666;transition:0.3s;}
+
+      #input:checked ~ #close{display:block;opacity:0.5;}
+      #input:checked ~ #content{-webkit-transform:translateX(0%);transform:translateX(0%);box-shadow:6px 0 25px rgba(0,0,0,.15);}
+
+      h1{font-size:50px;}
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="logo"><a href="#">Portfolio</a></div>
+      <div class="list"><ul><a href="#about"><li>About</li></a><a href="#skills"><li>Skills</li></a><a href="#works"><li>Works</li></a><a href="#contact"><li>Contact</li></a></ul></div>
+      <div id="nav">
+        <input id="input" type="checkbox" class="unshown"/>
+        <label id="open" for="input"><span></span></label>
+        <label id="close" for="input" class="unshown"></label>
+        <div id="content"><ul><a href="#"><li>About</li></a><a href="#"><li>Skills</li></a><a href="#"><li>Works</li></a><a href="#"><li>Contact</li></a></ul></div></div>
+    </div>
+  </header>
+  <main>
+    <div id="top">
+      <div class="top-box">
+        <div class="title">
+          <div class="width">
+            <h1>MY<br>PORTFOLIO<br>SITE</h1>
+          </div>
+        </div>
+        <div class="top-img"></div>
+      </div>
+    </div>
+    <div class="scroll"><a href="#about">scroll</a></div>
+
+    <div id="about">
+      <div class="about-img"></div>
+      <div class="about-box">
+        <div class="about-h2"><h2>about</h2></div>
+        <div class="flex">
+          <div class="about-table">
+            <table>
+              <tr><th>Name</th><td>ヨシダ タクマ</td></tr>
+              <tr><th>Birth</th><td>1995&#47;01&#47;11</td></tr>
+              <tr><th>From</th><td>京都府</td></tr>
+              <tr><th>Living</th><td>三重県</td></tr>
+              <tr><th>Career</th><td>鍼灸師 → Webデザイナー</td></tr>
+            </table>
+          </div>
+          <div class="face"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <h2>skills</h2>
+    HTML
+    CSS
+    JavaScript
+    Photoshop
+    Illustrator
+    <h2>works</h2>
+
+    <img src="e-home.png" alt="">
+    <a href="https://yoshida111.github.io/e-home.github.io/">サイトへ</a>
+    <img src="Kyoto.png" alt="">
+    <a href="https://yoshida111.github.io/kyoto.github.io/">サイトへ</a>
+    <img src="" alt="">
+    <a href=""></a>
+
+    <h2>contact</h2>
+    <a href="mailto:yoshidadesign111@gmail.com">Gmail</a>
+  </main>
+  <footer>©2020 Takuma Yoshida. All rights reserved.</footer>
+</body>
+</html>
